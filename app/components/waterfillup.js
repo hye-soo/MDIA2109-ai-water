@@ -1,4 +1,5 @@
 "use client";
+import ScaleSlider from "./scaleSilder";
 
 import { useState } from "react";
 
@@ -23,27 +24,30 @@ export default function WaterSimulator() {
       <div
         style={{
           width: "80px",
-          height: "150px",
+          height: "160px",
           border: "3px solid #38bdf8",
-          borderRadius: "0 0 12px 12px",
+          borderRadius: "0 0 16px 16px",
           margin: "20px auto",
           position: "relative",
           overflow: "hidden",
+          magin: "20px auto",
           background: "#0f172a",
         }}
       >
         {/* WATER FILL */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: `${waterLevel}%`,
-            background: "#38bdf8",
-            transition: "height 0.6s ease",
-          }}
-        />
+        {waterLevel > 0 && (
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: `${waterLevel}%`,
+              background: "#38bdf8",
+              transition: "height 0.6s ease",
+            }}
+          />
+        )}
       </div>
 
       {/* PROMPT COUNT */}
@@ -83,10 +87,17 @@ export default function WaterSimulator() {
         <div className="water-container">
           <div className="water" style={{ height: `${waterLevel}%` }}></div>
         </div>
+        {promptCount > 0 && (
+          <p style={{ marginTop: "16px", color: "#38bdf8" }}>
+            Each prompt costs ~500ml of water 💧
+          </p>
+        )}
         <p style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
           {promptCount * 500}ml used
         </p>
       </div>
+      {/* SCALE SLIDER — gets promptCount as a prop */}
+      <ScaleSlider promptCount={promptCount} />
     </div>
   );
 }
