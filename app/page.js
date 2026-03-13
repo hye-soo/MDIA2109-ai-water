@@ -4,6 +4,7 @@ import "./globals.css";
 import HeroSection from "./components/start";
 import QuizSection from "./components/quiz";
 import ExploreSection from "./components/explore";
+import WaterSimulator from "./components/waterfillup";
 
 export default function Home() {
   const [phase, setPhase] = useState("intro");
@@ -12,9 +13,10 @@ export default function Home() {
     <main>
       {phase === "intro" && <HeroSection onStart={() => setPhase("quiz")} />}
       {phase === "quiz" && <QuizSection onDone={() => setPhase("explore")} />}
-      {phase === "explore" && (
+      {/* {phase === "explore" && (
         <ExploreSection onRestart={() => setPhase("intro")} />
-      )}
+      )} */}
+      {phase === "explore" && <WaterSimulator />}
     </main>
   );
 }
