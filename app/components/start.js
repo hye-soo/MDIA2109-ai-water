@@ -29,12 +29,6 @@ export default function HeroSection({ onStart }) {
         </button>
       </div>
 
-      {/* Right Navigation Arrow */}
-      <button className={styles.navArrow} onClick={onStart} aria-label="Next">
-        <svg className={styles.arrowSvg} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M9 18l6-6-6-6" />
-        </svg>
-      </button>
     </div>
   );
 }
