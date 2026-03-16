@@ -60,17 +60,17 @@ export default function InfoCard() {
   return (
     <div
       style={{
-        background: "#1e293b",
+        background: "#a7c0faff",
         border: "1px solid #334155",
         borderRadius: "16px",
         padding: "20px",
         marginTop: "20px",
       }} //outercard container
     >
-      <h3 style={{ color: "white", margin: "0 0 4px 0" }}>
+      <h3 style={{ color: "#464d50ff", margin: "0 0 4px 0" }}>
         Can It Be Done Differently?
       </h3>
-      <p style={{ color: "#94a3b8", fontSize: "14px", margin: "0 0 16px 0" }}>
+      <p style={{ color: "#1c4e94ff", fontSize: "14px", margin: "0 0 16px 0" }}>
         Click a card to explore
       </p>
 
@@ -96,7 +96,7 @@ export default function InfoCard() {
                 background: isOpen
                   ? "rgba(74, 120, 228, 0.6)"
                   : //closed = dark background
-                    "rgba(15, 23, 42, 0.6)",
+                    "rgba(67, 79, 109, 0.6)",
                 border: isOpen ? "1px solid #38bdf8" : "1px solid #334155",
                 borderRadius: "12px",
                 padding: "12px",

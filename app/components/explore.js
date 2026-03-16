@@ -54,7 +54,7 @@ export default function ExploreSection({ onRestart }) {
         {/* LEFT COLUMN */}
         <div
           style={{
-            background: "#1e293b",
+            background: "#a7c0faff",
             border: "1px solid #334155",
             borderRadius: "16px",
             padding: "20px",

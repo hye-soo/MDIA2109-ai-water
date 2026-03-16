@@ -152,7 +152,7 @@ export default function WaterSimulator({ onPromptSent, onReset, promptCount }) {
             position: "relative",
             overflow: "hidden", //hide water when it goes above the cup
             magin: "20px auto",
-            background: "#0f172a",
+            background: "#c6d6faff",
           }}
         >
           {/* WATER FILL */}
@@ -202,16 +202,16 @@ export default function WaterSimulator({ onPromptSent, onReset, promptCount }) {
         style={{
           fontSize: "2rem",
           fontWeight: "bold",
-          color: "white",
+          color: "#e4f5fdff",
           margin: "20px 0 20px 0",
         }}
       >
         {promptCount}
       </p>
-      <p style={{ color: "#94a3b8", margin: "4px 0 0 0" }}>
+      <p style={{ color: "#42474fff", margin: "4px 0 0 0" }}>
         prompts ·{" "}
         <span
-          style={{ color: "#38bdf8", fontWeight: "bold", fontSize: "1.6rem" }}
+          style={{ color: "#e4f5fdff", fontWeight: "bold", fontSize: "1.6rem" }}
         >
           {promptCount * 500}ml
         </span>{" "}
@@ -219,7 +219,7 @@ export default function WaterSimulator({ onPromptSent, onReset, promptCount }) {
       </p>
 
       {promptCount > 0 && (
-        <p style={{ color: "#cae8f4ff", fontSize: "13px", marginTop: "8px" }}>
+        <p style={{ color: "#41484bff", fontSize: "13px", marginTop: "8px" }}>
           Each prompt costs ~500ml of water 💧
         </p>
       )}
@@ -239,7 +239,7 @@ export default function WaterSimulator({ onPromptSent, onReset, promptCount }) {
             width: "350px",
             border: "1px solid #38bdf8",
             marginRight: "8px",
-            background: "#1e293b",
+            background: "#a1b8ddff",
             color: "white",
           }}
         />
@@ -265,7 +265,7 @@ export default function WaterSimulator({ onPromptSent, onReset, promptCount }) {
               background: "transparent",
               border: "1px solid #334155",
               borderRadius: "8px",
-              color: "#9ea1a5ff",
+              color: "#5a5a5cff",
               padding: "6px 14px",
               cursor: "pointer",
               fontSize: "12px",

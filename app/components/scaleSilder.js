@@ -26,7 +26,7 @@ export default function ScaleSlider({ promptCount }) {
   return (
     <div
       style={{
-        background: "#1e293b",
+        background: "#a7c0faff",
         border: "1px solid #334155",
         borderRadius: "16px",
         padding: "20px",
@@ -76,7 +76,11 @@ export default function ScaleSlider({ promptCount }) {
           {/* USERS */}
           <div>
             <span
-              style={{ fontSize: "1.8rem", fontWeight: "bold", color: "white" }}
+              style={{
+                fontSize: "1.8rem",
+                fontWeight: "bold",
+                color: "#464d50ff",
+              }}
             >
               {users}M
             </span>
@@ -96,7 +100,7 @@ export default function ScaleSlider({ promptCount }) {
               style={{
                 fontSize: "1.8rem",
                 fontWeight: "bold",
-                color: "#38bdf8",
+                color: "#464d50ff",
               }}
             >
               {fmt(litresPerDay)}L
@@ -115,7 +119,7 @@ export default function ScaleSlider({ promptCount }) {
               style={{
                 fontSize: "1.8rem",
                 fontWeight: "bold",
-                color: "#7dd3fc",
+                color: "#464d50ff",
               }}
             >
               {fmt(showers)}
