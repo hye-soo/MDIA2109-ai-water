@@ -21,7 +21,7 @@ export default function ExploreSection({ onRestart }) {
         }}
       >
         <span style={{ fontSize: "1.5rem" }}>💧</span>
-        <h1 style={{ color: "white", margin: 0, fontSize: "1.4rem" }}>
+        <h1 style={{ color: "#5b9ffdff", margin: 0, fontSize: "1.4rem" }}>
           Every Prompt <span style={{ color: "#38bdf8" }}>Drinks Water</span>
         </h1>
         {/* RESTART BUTTON — pushed to the right with marginLeft auto */}
@@ -54,7 +54,7 @@ export default function ExploreSection({ onRestart }) {
         {/* LEFT COLUMN */}
         <div
           style={{
-            background: "#a7c0faff",
+            background: "#f9f9f9",
             border: "1px solid #334155",
             borderRadius: "16px",
             padding: "20px",

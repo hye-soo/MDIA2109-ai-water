@@ -9,7 +9,7 @@ const SOLUTIONS = [
     label: "Traditional Cooling",
     icon: "💧",
     impact: "High water use",
-    impactColor: "#f87171",
+    impactColor: "#f72424ff",
     description:
       "Most data centers use evaporative cooling towers, consuming massive amounts of freshwater just to keep servers at safe operating temperatures.",
   },
@@ -18,7 +18,7 @@ const SOLUTIONS = [
     label: "Recycled Water",
     icon: "♻️",
     impact: "−80% freshwater",
-    impactColor: "#38bdf8",
+    impactColor: "#156485ff",
     description:
       "Forward-thinking facilities now use treated wastewater or grey water for cooling, slashing freshwater consumption by up to 80%.",
   },
@@ -27,7 +27,7 @@ const SOLUTIONS = [
     label: "Zero-Water Cooling",
     icon: "🌿",
     impact: "Near-zero water",
-    impactColor: "#86efac",
+    impactColor: "#379156ff",
     description:
       "Next-gen facilities use ambient air, liquid immersion cooling, or strategically locate in cold climates to eliminate water use.",
   },
@@ -36,7 +36,7 @@ const SOLUTIONS = [
     label: "Efficient Models",
     icon: "⚡",
     impact: "Systemic change",
-    impactColor: "#86efac",
+    impactColor: "#379156ff",
     description:
       "Smaller, distilled AI models need dramatically less computation — and therefore less cooling water — per query you send.",
   },
@@ -60,7 +60,7 @@ export default function InfoCard() {
   return (
     <div
       style={{
-        background: "#a7c0faff",
+        background: "#f9f9f9",
         border: "1px solid #334155",
         borderRadius: "16px",
         padding: "20px",

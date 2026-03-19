@@ -106,11 +106,10 @@ export default function WaterSimulator({ onPromptSent, onReset, promptCount }) {
     pointer-events: none;
   }
       `}</style>
-
       <p
         style={{
           color: "#94a3b8",
-          fontSize: "11px",
+          fontSize: "30px",
           letterSpacing: "2px",
           textTransform: "uppercase",
           margin: "0 0 6px 0",
@@ -118,7 +117,14 @@ export default function WaterSimulator({ onPromptSent, onReset, promptCount }) {
       >
         Try It Yourself
       </p>
-      <p style={{ color: "white", fontWeight: "bold", margin: "0 0 16px 0" }}>
+      <p
+        style={{
+          fontSize: "20px",
+          color: "#313132ff",
+          fontWeight: "bold",
+          margin: "0 0 60px 0",
+        }}
+      >
         Type a prompt. Watch the water rise.
       </p>
       {/* CUP WRAPPER — relative so drop can fall into it */}
@@ -196,34 +202,28 @@ export default function WaterSimulator({ onPromptSent, onReset, promptCount }) {
           )}
         </div>
       </div>
-
       {/* STATS — uses promptCount*/}
       <p
         style={{
           fontSize: "2rem",
           fontWeight: "bold",
-          color: "#e4f5fdff",
+          color: "#313132ff",
           margin: "20px 0 20px 0",
         }}
       >
-        {promptCount}
+        {promptCount} prompts ={" "}
       </p>
-      <p style={{ color: "#42474fff", margin: "4px 0 0 0" }}>
-        prompts ·{" "}
-        <span
-          style={{ color: "#e4f5fdff", fontWeight: "bold", fontSize: "1.6rem" }}
-        >
-          {promptCount * 500}ml
-        </span>{" "}
-        used
-      </p>
-
+      <span
+        style={{ color: "#313132ff", fontWeight: "bold", fontSize: "2rem" }}
+      >
+        {promptCount * 500}ml
+      </span>{" "}
+      used
       {promptCount > 0 && (
         <p style={{ color: "#41484bff", fontSize: "13px", marginTop: "8px" }}>
           Each prompt costs ~500ml of water 💧
         </p>
       )}
-
       {/* INPUT & BUTTON */}
       <div style={{ marginTop: "20px" }}>
         <input
@@ -265,7 +265,7 @@ export default function WaterSimulator({ onPromptSent, onReset, promptCount }) {
               background: "transparent",
               border: "1px solid #334155",
               borderRadius: "8px",
-              color: "#5a5a5cff",
+              color: "#313132ff",
               padding: "6px 14px",
               cursor: "pointer",
               fontSize: "12px",

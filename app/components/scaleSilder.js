@@ -12,28 +12,25 @@ export default function ScaleSlider({ promptCount }) {
   //perPersonLitres = how many litres each person uses
   const perPersonLitres = promptCount * 0.5;
   //litresPerDay = how many litres are used per day
-  const litresPerDay = users * 1000000 * perPersonLitres;
+  const litresPerDay = users * perPersonLitres;
   //showers = how many showers are equivalent to the litres used per day
-  const showers = Math.round(litresPerDay / 65);
-  //fmt = format numbers to be more readable
-  function fmt(n) {
-    if (n >= 1000000000) return (n / 1000000000).toFixed(1) + "B";
-    if (n >= 1000000) return (n / 1000000).toFixed(1) + "M";
-    if (n >= 1000) return (n / 1000).toFixed(0) + "K";
-    return n.toString();
-  }
+  const showers = Math.round(litresPerDay * 0.65);
+  const poopCount = Math.min(
+    10,
+    Math.floor((users / 99) * 10) + Math.floor(promptCount / 10),
+  );
+  const smileyCount = 10 - poopCount;
 
   return (
     <div
       style={{
-        background: "#a7c0faff",
+        background: "#f9f9f9",
         border: "1px solid #334155",
         borderRadius: "16px",
         padding: "20px",
-        marginTop: "20px",
       }}
     >
-      <h3 style={{ color: "white", margin: "0 0 4px 0" }}>
+      <h3 style={{ color: "#313132ff", margin: "0 0 4px 0" }}>
         Now Scale It Up Drag to see the impact
       </h3>
       <p style={{ color: "#94a3b8", margin: "0 0 16px 0", fontSize: "14px" }}>
@@ -44,7 +41,7 @@ export default function ScaleSlider({ promptCount }) {
       <input
         type="range"
         min="1"
-        max="100"
+        max="99"
         value={users}
         //setUsers = updates the slider value (calculates the scaled impact)
         //e.target.value = the value of the slider
@@ -69,7 +66,7 @@ export default function ScaleSlider({ promptCount }) {
           style={{
             display: "flex",
             gap: "24px",
-            flexWrap: "wrap",
+            display: "grid",
             marginTop: "16px",
           }}
         >
@@ -82,12 +79,12 @@ export default function ScaleSlider({ promptCount }) {
                 color: "#464d50ff",
               }}
             >
-              {users}M
+              {users}
             </span>
             <span
-              style={{ color: "#94a3b8", fontSize: "13px", marginLeft: "6px" }}
+              style={{ color: "#64748b", fontSize: "13px", marginLeft: "6px" }}
             >
-              people<span style={{ fontSize: "1.8rem" }}>🧑‍🤝‍🧑</span>
+              People Usage<span style={{ fontSize: "1.8rem" }}>🧑‍🤝‍🧑</span>
             </span>
           </div>
 
@@ -103,12 +100,12 @@ export default function ScaleSlider({ promptCount }) {
                 color: "#464d50ff",
               }}
             >
-              {fmt(litresPerDay)}L
+              {litresPerDay}L
             </span>
             <span
-              style={{ color: "#94a3b8", fontSize: "13px", marginLeft: "6px" }}
+              style={{ color: "#64748b", fontSize: "13px", marginLeft: "6px" }}
             >
-              water/day <span style={{ fontSize: "1.8rem" }}>💦</span>
+              Water Lost/Day <span style={{ fontSize: "1.8rem" }}>💦</span>
             </span>
           </div>
           {/* DIVIDER */}
@@ -122,13 +119,18 @@ export default function ScaleSlider({ promptCount }) {
                 color: "#464d50ff",
               }}
             >
-              {fmt(showers)}
+              {showers}
             </span>
             <span
-              style={{ color: "#94a3b8", fontSize: "13px", marginLeft: "6px" }}
+              style={{
+                color: "#64748b",
+                fontSize: "13px",
+                marginLeft: "6px",
+              }}
             >
-              showers <span style={{ fontSize: "1.8rem" }}>🛁</span>
+              Lose Showers <span style={{ fontSize: "1.8rem" }}>🛁</span>
             </span>
+            <div style={{ borderLeft: "1px solid #dae4ffff" }} />
           </div>
         </div>
       )}
@@ -137,10 +139,38 @@ export default function ScaleSlider({ promptCount }) {
       {/* if promptcount > 0 (only show when at least one prompt has been sent), show the connection note */}
       {promptCount > 0 && (
         <p style={{ color: "#64748b", fontSize: "12px", marginTop: "12px" }}>
-          Each of {users}M people sends {promptCount} prompt
+          Each of {users} people sends {promptCount} prompt
           {/* if promptcount is greater than 1, add an "s" to "prompt" */}
           {promptCount > 1 ? "s" : ""} × 0.5L each
         </p>
+      )}
+      {users > 1 && (
+        <div
+          style={{
+            borderRadius: "16px",
+            padding: "8px 0",
+            marginTop: "8px",
+          }}
+        >
+          <p
+            style={{
+              color: "#64748b",
+              fontSize: "12px",
+              margin: "0 0 6px 0",
+            }}
+          ></p>
+          <p
+            style={{
+              position: "relative",
+              minWidth: "100%",
+              fontSize: "1.5rem",
+              margin: "0",
+            }}
+          >
+            {"😊".repeat(smileyCount)}
+            {"💩".repeat(poopCount)}
+          </p>
+        </div>
       )}
     </div>
   );
