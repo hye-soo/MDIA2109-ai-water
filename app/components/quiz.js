@@ -22,100 +22,39 @@ export default function QuizSection({ onDone }) {
 
   return (
     <>
+      {/* Minimal style tag only for things that cannot be inlined: keyframes, hover/active/disabled states, and dynamic state classes */}
       <style>{`
-        .quiz-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          min-height: 100vh;
-          width: 100%;
-          background: #FAF9F9;
-          color: #0f172a;
-          padding: 2rem;
-          font-family: inherit;
-        }
-
-        .quiz-header {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin-bottom: 2.5rem;
-          text-align: center;
-        }
-
-        .quiz-eyebrow {
-          color: #094D92;
-          font-size: 0.8rem;
-          font-weight: 500;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          margin-bottom: 1rem;
-        }
-
-        .quiz-title {
-          font-size: 2.5rem;
-          font-weight: 400;
-          line-height: 1.3;
-          margin: 0;
-          max-width: 600px;
-        }
-
-        .quiz-options {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          width: 100%;
-          max-width: 500px;
-        }
-
-        .quiz-option-btn {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-          padding: 1.25rem 1.5rem;
-          background-color: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          border-radius: 12px;
-          color: #0f172a;
-          font-size: 1.125rem;
-          cursor: pointer;
-          transition: all 0.2s ease-in-out;
-          text-align: left;
-        }
-
         .quiz-option-btn:hover:not(:disabled) {
-          background-color: #f8fafc;
-          border-color: #2F97C1;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(47, 151, 193, 0.2);
+          background-color: #f8fafc !important;
+          border-color: #2F97C1 !important;
+          transform: translateY(-2px) !important;
+          box-shadow: 0 4px 12px rgba(47, 151, 193, 0.2) !important;
         }
 
         .quiz-option-btn:active:not(:disabled) {
-          transform: translateY(0);
+          transform: translateY(0) !important;
         }
 
         .quiz-option-btn.selected {
-          background-color: #eff6ff;
-          border-color: #094D92;
-          box-shadow: 0 0 0 1px #094D92;
+          background-color: #eff6ff !important;
+          border-color: #094D92 !important;
+          box-shadow: 0 0 0 1px #094D92 !important;
         }
 
         .quiz-option-btn.correct {
-          background-color: rgba(16, 185, 129, 0.2);
-          border-color: #10b981;
+          background-color: rgba(16, 185, 129, 0.2) !important;
+          border-color: #10b981 !important;
         }
 
         .quiz-option-btn.incorrect {
-          background-color: rgba(239, 68, 68, 0.2);
-          border-color: #ef4444;
+          background-color: rgba(239, 68, 68, 0.2) !important;
+          border-color: #ef4444 !important;
           animation: quizShake 0.4s ease-in-out;
         }
 
         .quiz-option-btn:disabled {
-          cursor: default;
-          opacity: 0.8;
+          cursor: default !important;
+          opacity: 0.8 !important;
         }
 
         @keyframes quizShake {
@@ -125,15 +64,51 @@ export default function QuizSection({ onDone }) {
         }
       `}</style>
 
-      <div className="quiz-container">
-        <div className="quiz-header">
-          <span className="quiz-eyebrow">Quick Question</span>
-          <h2 className="quiz-title">
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        width: '100%',
+        background: '#FAF9F9',
+        color: '#0f172a',
+        padding: '2rem',
+        fontFamily: 'inherit',
+      }}>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginBottom: '2.5rem',
+          textAlign: 'center',
+        }}>
+          <span style={{
+            color: '#094D92',
+            fontSize: '0.8rem',
+            fontWeight: 500,
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            marginBottom: '1rem',
+          }}>Quick Question</span>
+          <h2 style={{
+            fontSize: '2.5rem',
+            fontWeight: 400,
+            lineHeight: 1.3,
+            margin: 0,
+            maxWidth: '600px',
+          }}>
             How much water does a single <br /> AI prompt use?
           </h2>
         </div>
         
-        <div className="quiz-options">
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem',
+          width: '100%',
+          maxWidth: '500px',
+        }}>
           {options.map((opt) => {
             let btnStateClass = "";
             
@@ -149,6 +124,21 @@ export default function QuizSection({ onDone }) {
               <button
                 key={opt.value}
                 className={`quiz-option-btn ${btnStateClass}`}
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  width: '100%',
+                  padding: '1.25rem 1.5rem',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid rgba(0, 0, 0, 0.1)',
+                  borderRadius: '12px',
+                  color: '#0f172a',
+                  fontSize: '1.125rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease-in-out',
+                  textAlign: 'left',
+                }}
                 onClick={() => handleGuess(opt.value)}
                 disabled={guessed !== null}
               >
@@ -162,3 +152,4 @@ export default function QuizSection({ onDone }) {
     </>
   );
 }
+

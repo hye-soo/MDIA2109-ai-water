@@ -1,92 +1,12 @@
 export default function HeroSection({ onStart }) {
   return (
     <>
+      {/* Minimal style tag only for things that cannot be inlined: keyframes, pseudo-elements, hover/active states, and media queries */}
       <style>{`
-        .start-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          min-height: 100vh;
-          width: 100%;
-          background: #FAF9F9;
-          color: #0f172a;
-          position: relative;
-          overflow: hidden;
-          text-align: center;
-          padding: 2rem;
-        }
-
-        .start-bg-particle {
-          position: absolute;
-          border-radius: 50%;
-          background: rgba(96, 165, 250, 0.1);
-          filter: blur(40px);
-          z-index: 1;
-          animation: startFloat 20s infinite ease-in-out;
-        }
-
-        .start-particle1 {
-          width: 300px;
-          height: 300px;
-          top: 10%;
-          left: 20%;
-          animation-delay: 0s;
-        }
-
-        .start-particle2 {
-          width: 400px;
-          height: 400px;
-          bottom: -10%;
-          right: 15%;
-          background: rgba(56, 189, 248, 0.08);
-          animation-delay: -5s;
-        }
-
-        .start-particle3 {
-          width: 200px;
-          height: 200px;
-          top: 40%;
-          right: 40%;
-          background: rgba(148, 163, 184, 0.05);
-          animation-delay: -10s;
-        }
-
         @keyframes startFloat {
           0%, 100% { transform: translate(0, 0); }
           33% { transform: translate(30px, -50px); }
           66% { transform: translate(-20px, 40px); }
-        }
-
-        .start-content {
-          position: relative;
-          z-index: 10;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          max-width: 800px;
-        }
-
-        .start-icon-wrapper {
-          width: 72px;
-          height: 72px;
-          background: #eff6ff;
-          border: 1px solid #bfdbfe;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 0.5rem;
-          box-shadow: 0 8px 32px rgba(9, 77, 146, 0.2);
-          animation: startPulseIcon 4s infinite ease-in-out;
-          cursor: pointer;
-          transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
-        }
-
-        .start-icon-wrapper:hover {
-          transform: scale(1.1);
-          background: #dbeafe;
-          border-color: #93c5fd;
         }
 
         @keyframes startPulseIcon {
@@ -100,45 +20,10 @@ export default function HeroSection({ onStart }) {
           }
         }
 
-        .start-icon-svg {
-          color: #094D92;
-          width: 32px;
-          height: 32px;
-        }
-
-        .start-title {
-          font-size: 4.5rem;
-          font-weight: 500;
-          line-height: 1.1;
-          margin-bottom: 1.5rem;
-          letter-spacing: -0.02em;
-        }
-
-        .start-title-blue {
-          color: #094D92;
-          display: block;
-        }
-
-        .start-subtitle {
-          color: #475569;
-          font-size: 1.25rem;
-          margin-bottom: 3rem;
-          font-weight: 400;
-        }
-
-        .start-btn {
-          background: #094D92;
-          color: #ffffff;
-          padding: 16px 48px;
-          border-radius: 999px;
-          font-size: 1.125rem;
-          font-weight: 600;
-          border: none;
-          cursor: pointer;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: 0 8px 25px rgba(9, 77, 146, 0.4);
-          position: relative;
-          overflow: hidden;
+        .start-icon-wrapper:hover {
+          transform: scale(1.1) !important;
+          background: #dbeafe !important;
+          border-color: #93c5fd !important;
         }
 
         .start-btn::after {
@@ -158,45 +43,181 @@ export default function HeroSection({ onStart }) {
         }
 
         .start-btn:hover {
-          transform: translateY(-3px) scale(1.03);
-          box-shadow: 0 12px 30px rgba(9, 77, 146, 0.6);
-          background: #0c61b5;
+          transform: translateY(-3px) scale(1.03) !important;
+          box-shadow: 0 12px 30px rgba(9, 77, 146, 0.6) !important;
+          background: #0c61b5 !important;
         }
 
         .start-btn:active {
-          transform: translateY(1px) scale(0.98);
+          transform: translateY(1px) scale(0.98) !important;
         }
 
         @media (max-width: 768px) {
           .start-title {
-            font-size: 3rem;
+            font-size: 3rem !important;
           }
         }
       `}</style>
 
-      <div className="start-container">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "100vh",
+          width: "100%",
+          background: "#FAF9F9",
+          color: "#0f172a",
+          position: "relative",
+          overflow: "hidden",
+          textAlign: "center",
+          padding: "2rem",
+        }}
+      >
         {/* Background Particles for interactive feel */}
-        <div className="start-bg-particle start-particle1"></div>
-        <div className="start-bg-particle start-particle2"></div>
-        <div className="start-bg-particle start-particle3"></div>
+        <div
+          style={{
+            position: "absolute",
+            borderRadius: "50%",
+            background: "rgba(96, 165, 250, 0.1)",
+            filter: "blur(40px)",
+            zIndex: 1,
+            animation: "startFloat 20s infinite ease-in-out",
+            width: "300px",
+            height: "300px",
+            top: "10%",
+            left: "20%",
+            animationDelay: "0s",
+          }}
+        ></div>
+        <div
+          style={{
+            position: "absolute",
+            borderRadius: "50%",
+            background: "rgba(56, 189, 248, 0.08)",
+            filter: "blur(40px)",
+            zIndex: 1,
+            animation: "startFloat 20s infinite ease-in-out",
+            width: "400px",
+            height: "400px",
+            bottom: "-10%",
+            right: "15%",
+            animationDelay: "-5s",
+          }}
+        ></div>
+        <div
+          style={{
+            position: "absolute",
+            borderRadius: "50%",
+            background: "rgba(148, 163, 184, 0.05)",
+            filter: "blur(40px)",
+            zIndex: 1,
+            animation: "startFloat 20s infinite ease-in-out",
+            width: "200px",
+            height: "200px",
+            top: "40%",
+            right: "40%",
+            animationDelay: "-10s",
+          }}
+        ></div>
 
-        <div className="start-content">
-          <div className="start-icon-wrapper">
-            <svg className="start-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <div
+          style={{
+            position: "relative",
+            zIndex: 10,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            maxWidth: "800px",
+          }}
+        >
+          <div
+            className="start-icon-wrapper"
+            style={{
+              width: "72px",
+              height: "72px",
+              background: "#eff6ff",
+              border: "1px solid #bfdbfe",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: "0.5rem",
+              boxShadow: "0 8px 32px rgba(9, 77, 146, 0.2)",
+              animation: "startPulseIcon 4s infinite ease-in-out",
+              cursor: "pointer",
+              transition:
+                "transform 0.3s ease, background 0.3s ease, border-color 0.3s ease",
+            }}
+          >
+            <svg
+              style={{
+                color: "#094D92",
+                width: "32px",
+                height: "32px",
+              }}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
             </svg>
           </div>
-          
-          <h1 className="start-title">
+
+          <h1
+            className="start-title"
+            style={{
+              fontSize: "4.5rem",
+              fontWeight: 500,
+              lineHeight: 1.1,
+              marginBottom: "1.5rem",
+              letterSpacing: "-0.02em",
+            }}
+          >
             Every Prompt
-            <span className="start-title-blue">Drinks Water</span>
+            <span
+              style={{
+                color: "#B98B6D",
+                display: "block",
+              }}
+            >
+              Drinks Water
+            </span>
           </h1>
-          
-          <p className="start-subtitle">
+
+          <p
+            style={{
+              color: "#475569",
+              fontSize: "1.25rem",
+              marginBottom: "3rem",
+              fontWeight: 400,
+            }}
+          >
             The invisible water behind artificial intelligence.
           </p>
-          
-          <button className="start-btn" onClick={onStart}>
+
+          <button
+            className="start-btn"
+            style={{
+              background: "#5BC0EB",
+              color: "#ffffff",
+              padding: "16px 48px",
+              borderRadius: "999px",
+              fontSize: "1.125rem",
+              fontWeight: 600,
+              border: "none",
+              cursor: "pointer",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              boxShadow: "0 8px 25px rgba(9, 77, 146, 0.4)",
+              position: "relative",
+              overflow: "hidden",
+            }}
+            onClick={onStart}
+          >
             Start Simulation
           </button>
         </div>
