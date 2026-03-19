@@ -144,7 +144,7 @@ export default function ScaleSlider({ promptCount }) {
           {promptCount > 1 ? "s" : ""} × 0.5L each
         </p>
       )}
-      {users > 1 && (
+      {users > 1 && promptCount > 0 && (
         <div
           style={{
             borderRadius: "16px",
